@@ -28,12 +28,21 @@ namespace SlotMachine
             while (myMachine.GetPayout() == 0)
             {
                 // place a bet
-                Console.WriteLine("Type in how many pennies to bet");
+                do
+                {
+                    Console.WriteLine("Type in how many pennies to bet");
+                    
 
-                // You could get this using:
-                // int userBet = Convert.ToInt32(Console.ReadLine());
-                // myMachine.CurrentBet = userBet;
-                myMachine.CurrentBet = Convert.ToInt32(Console.ReadLine());
+                    // You could get this using:
+                    // int userBet = Convert.ToInt32(Console.ReadLine());
+                    // myMachine.CurrentBet = userBet;
+                    myMachine.CurrentBet = Convert.ToInt32(Console.ReadLine());
+                    if (!(myMachine.CurrentBet > 0 && myMachine.CurrentBet < 21))
+                    {
+                        Console.WriteLine("Please enter a number between 1 and 20");
+                    }
+                }
+                while (!(myMachine.CurrentBet > 0 && myMachine.CurrentBet < 21));
 
                 // pull the lever
                 Console.WriteLine("Press enter to pull the lever");

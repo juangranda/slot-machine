@@ -59,9 +59,11 @@ namespace SlotMachine
             // TODO
             icons = new int[NumberOfSlots];
             Random random = new Random();
-            icons[0] = random.Next(1, IconsPerSlot + 1);
-            icons[1] = random.Next(1, IconsPerSlot + 1);
-            icons[2] = random.Next(1, IconsPerSlot + 1);
+            for (int i = 0; i < icons.Length; i++)
+            {
+                icons[i] = random.Next(1, IconsPerSlot + 1);
+            }
+
         }
 
         /// <summary>
