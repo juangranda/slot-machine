@@ -30,7 +30,7 @@ namespace SlotMachine
                 // place a bet
                 do
                 {
-                    Console.WriteLine("Type in how many pennies to bet");
+                    Console.WriteLine("Type in how many dollars to bet");
                     
 
                     // You could get this using:
