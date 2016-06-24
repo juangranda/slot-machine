@@ -25,7 +25,7 @@ namespace SlotMachine
 
             Console.WriteLine("Directions");
 
-            while (true)
+            while (myMachine.GetPayout() == 0)
             {
                 // place a bet
                 Console.WriteLine("Type in how many pennies to bet");
@@ -48,8 +48,10 @@ namespace SlotMachine
                 }
 
                 // payout
+                
                 Console.WriteLine("You won {0} pennies!", myMachine.GetPayout());
             }
+            Console.ReadKey();
 
         }
     }

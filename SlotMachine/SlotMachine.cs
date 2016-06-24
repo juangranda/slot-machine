@@ -57,6 +57,11 @@ namespace SlotMachine
         public void PullLever()
         {
             // TODO
+            icons = new int[NumberOfSlots];
+            Random random = new Random();
+            icons[0] = random.Next(1, IconsPerSlot + 1);
+            icons[1] = random.Next(1, IconsPerSlot + 1);
+            icons[2] = random.Next(1, IconsPerSlot + 1);
         }
 
         /// <summary>
@@ -66,7 +71,8 @@ namespace SlotMachine
         public int[] GetResults()
         {
             // TODO
-            return null;
+            PullLever();
+            return icons;
         }
 
         /// <summary>
@@ -77,6 +83,11 @@ namespace SlotMachine
         public int GetPayout()
         {
             // TODO
+            if (icons != null)
+            { 
+                if (icons[0] == icons[1] && icons[0] == icons[2])
+                return _currentBet * 5;
+            }
             return 0;
         }
 
